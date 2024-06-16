@@ -40,7 +40,7 @@ def load_model(path, esm_arch, device, coordinator_checkpoint=None, model=None, 
         model = create_clip_model(esm_arch, model_building_args, device=device, coordinator_checkpoint=coordinator_checkpoint)
     if load_state_dict:
         state_dict = _unwrap_ddp_model(ckpt['state_dict'])
-        print(state_dict['position_ids'])
+        # print(state_dict['position_ids'])
         model.load_state_dict(state_dict)
     print(ckpt['run_metadata'])
     return model
