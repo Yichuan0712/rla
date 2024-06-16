@@ -42,7 +42,6 @@ def load_model(path, esm_arch, device, coordinator_checkpoint=None, model=None, 
         state_dict = _unwrap_ddp_model(ckpt['state_dict'])
         # print(state_dict['position_ids'])
         model.load_state_dict(state_dict)
-        exit(0)
     print(ckpt['run_metadata'])
     return model
 
